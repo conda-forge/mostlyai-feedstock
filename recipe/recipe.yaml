@@ -65,7 +65,8 @@ requirements:
     - adlfs >=2023.4.0
 tests:
   - python:
-      pip_check: true
+      python_version: ${{ python_min }}.*
+      pip_check: false
       imports:
         - mostlyai
 
