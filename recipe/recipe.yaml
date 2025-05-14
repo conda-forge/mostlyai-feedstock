@@ -66,6 +66,8 @@ requirements:
 tests:
   - python:
       python_version: ${{ python_min }}.*
+      # mostlyai-qa currently fails pip check
+      # See https://github.com/conda-forge/mostlyai-qa-feedstock/blob/main/recipe/recipe.yaml#L62
       pip_check: false
       imports:
         - mostlyai
