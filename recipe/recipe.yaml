@@ -1,27 +1,28 @@
-{% set name = "mostlyai" %}
-{% set version = "4.6.0" %}
-{% set python_min = "3.10" %}
+context:
+  name: "mostlyai"
+  version: "4.6.0"
+  python_min: "3.10"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mostlyai-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/mostlyai-${{ version }}.tar.gz
   sha256: 50f10331888393b21355b65aa5f1514d723ff9773ad91f2fe0bda8bc089ccb1b
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 1
   noarch: python
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - hatchling
     - pip
   run:
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - pydantic >=2.4.2,<3
     - httpx >=0.25.0
     - pandas >=2.0.0
@@ -62,20 +63,17 @@ requirements:
     - smart-open >=6.3.0
     - azure-storage-blob >=12.16.0
     - adlfs >=2023.4.0
-test:
-  imports:
-    - mostlyai
-  commands:
-    - pip check
-  requires:
-    - python {{ python_min }}
-    - pip
+tests:
+  - python:
+      pip_check: true
+      imports:
+        - mostlyai
 
 about:
   summary: Synthetic Data SDK
   license: Apache-2.0
   license_file: LICENSE
-  home: https://github.com/mostly-ai/mostlyai
+  homepage: https://github.com/mostly-ai/mostlyai
 
 extra:
   recipe-maintainers:
