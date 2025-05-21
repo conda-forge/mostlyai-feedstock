@@ -43,7 +43,7 @@ requirements:
     - sqlparse >=0.5.3
     # Extra: local
     - mostlyai-engine ==1.4.0
-    - mostlyai-qa ==1.9.3
+    - mostlyai-qa ==1.9.5
     - fastapi >=0.115.6,<0.116
     - uvicorn >=0.34.0,<0.35
     - python-multipart >=0.0.20
