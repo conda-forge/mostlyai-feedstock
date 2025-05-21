@@ -1,6 +1,6 @@
 context:
   name: "mostlyai"
-  version: "4.6.2"
+  version: "4.6.3"
   python_min: "3.10"
 
 package:
@@ -9,11 +9,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/mostlyai-${{ version }}.tar.gz
-  sha256: 34327ed4ecae1781b98ba4b9760085750538336bfe707e876795378bb455fe6c
+  sha256: 2d2fc706ddea9c4f657e9fba857d263126ab62a02cc224ba4bf5558cd0c4c1fb
 
 build:
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
   noarch: python
 
 requirements:
@@ -43,7 +43,7 @@ requirements:
     - sqlparse >=0.5.3
     # Extra: local
     - mostlyai-engine ==1.4.0
-    - mostlyai-qa ==1.9.3
+    - mostlyai-qa ==1.9.5
     - fastapi >=0.115.6,<0.116
     - uvicorn >=0.34.0,<0.35
     - python-multipart >=0.0.20
