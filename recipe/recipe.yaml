@@ -1,6 +1,6 @@
 context:
   name: "mostlyai"
-  version: "4.6.3"
+  version: "4.7.2"
   python_min: "3.10"
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/mostlyai-${{ version }}.tar.gz
-  sha256: 2d2fc706ddea9c4f657e9fba857d263126ab62a02cc224ba4bf5558cd0c4c1fb
+  sha256: 13849a5c3f8069373684273452d3ab2d1dee073d5e7464d8eef60bdb43da7626
 
 build:
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -42,8 +42,8 @@ requirements:
     - python-duckdb >=1.2.1
     - sqlparse >=0.5.3
     # Extra: local
-    - mostlyai-engine ==1.4.0
-    - mostlyai-qa ==1.9.5
+    - mostlyai-engine ==1.4.3
+    - mostlyai-qa ==1.9.7
     - fastapi >=0.115.6,<0.116
     - uvicorn >=0.34.0,<0.35
     - python-multipart >=0.0.20
