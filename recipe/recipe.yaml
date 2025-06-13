@@ -1,6 +1,6 @@
 context:
   name: "mostlyai"
-  version: "4.7.3"
+  version: "4.7.7"
   python_min: "3.10"
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/mostlyai-${{ version }}.tar.gz
-  sha256: 75074ac1f77deb9b49934df679818b76b06a644904210795d23b8e5be8e5aecf
+  sha256: 6a0fd1f4d01cff04f7c6f7ab04ab7bb56edc06c0c35c00d813ffee4cfe9c9fdb
 
 build:
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
